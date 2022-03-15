@@ -12,6 +12,25 @@ public class BubbleSort {
         Generator.printArray(array);
     }
 
+    //perseritja eshte variable me te cilen po perdorim
+    //se sa iteracione nevoiten me sortuar dhe per sa me zvoguelu domainin e kerkimit
+
+    public static void bubbleSortEnhanced(int[] array) {
+        boolean isSorted = false;
+        for (int perseritja = 0; perseritja < array.length - 1 && !isSorted; perseritja++) {
+            isSorted = true; // po supozoje qe isSorted eshte true
+            for (int i = 0; i < array.length - 1 - perseritja; i++) {
+                if (array[i] > array[i + 1]) {
+                    int temp = array[i];
+                    array[i] = array[i + 1];
+                    array[i + 1] = temp;
+                    isSorted = false;
+                }
+            }
+        }
+    }
+
+
     public static void bubbleSort(int[] array) {
         for (int iPass = 1; iPass <= array.length - 1; iPass++) {
             for (int i = 0; i <= array.length - 2; i++) {
@@ -24,6 +43,8 @@ public class BubbleSort {
             }
         }
     }
+
+
 }
 
 
