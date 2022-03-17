@@ -27,6 +27,7 @@ public class BubbleSort {
                     isSorted = false;
                 }
             }
+            Generator.printArray(array);
         }
     }
 
@@ -41,6 +42,7 @@ public class BubbleSort {
                     array[i + 1] = temp;
                 }
             }
+            Generator.printArray(array);
         }
     }
 
