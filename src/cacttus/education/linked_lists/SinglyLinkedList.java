@@ -59,6 +59,7 @@ public class SinglyLinkedList {
             return;
         }
         head = head.getNext();
+        decrement();
     }
 
     public void removeLast() {
@@ -70,6 +71,8 @@ public class SinglyLinkedList {
         //atehere head = null fshije edhe ate element
         if (head.getNext() == null) {
             head = null;
+            decrement();
+            return;
         }
 
         Node temp = head;
@@ -78,7 +81,39 @@ public class SinglyLinkedList {
             temp = temp.getNext();
         }
         temp.setNext(null);
+        decrement();
     }
+
+    //metoda e cila kthen nyjen sipas indeksit te zgjedhur
+    public Node findByIndex(int index) {
+        if (index < 0) {
+            System.out.println("Nuk lejohen indeksi negative!");
+        } else if (index >= counter) {
+            System.out.println("Nuk ka aq elemente ne liste!");
+        } else {
+            Node temp = head;
+            for (int i = 0; i < index; i++) {
+                temp = temp.getNext();
+            }
+            return temp; //kthe nyjen e gjetur ne ate pozite
+        }
+        return null; //kthe null nese nuk eshte gjetur
+    }
+
+    public void addAfterIndex(int data, int index) {
+        Node node = findByIndex(index); //gjej nyjen sipas indeksit
+
+        if (node == null) {
+            System.out.println("Nyja nuk eshte gjetur!");
+            return;
+        }
+        //u krijua nyja e re me vleren e dhene pra (katrori me vlere)
+        Node newNode = new Node(data);
+        newNode.setNext(node.getNext());//nyja e re dergon ku ka derguar nyja paraprake
+        node.setNext(newNode); //nyja e vjeter dergon tek nyja e re tashme
+        increment();
+    }
+
 
     public void print() {
         //kjo gabim per shkak se jemi duke perdore referencen e head

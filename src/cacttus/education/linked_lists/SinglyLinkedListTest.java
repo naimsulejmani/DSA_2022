@@ -8,6 +8,10 @@ public class SinglyLinkedListTest {
         lista.addFirst(200);
         lista.addLast(999);
 
+        Node nyja = lista.findByIndex(2);
+        System.out.println("Nyja e gjetur eshte: " + nyja);
+        lista.addAfterIndex(555,2);
+
         lista.print();
         System.out.println("----------------------");
         lista.removeFirst();
