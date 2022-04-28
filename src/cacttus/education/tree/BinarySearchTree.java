@@ -91,6 +91,8 @@ public class BinarySearchTree {
         System.out.println(root.getData());
     }
 
+
+
     public void postorderTraversal() {
         postorder(root);
     }
