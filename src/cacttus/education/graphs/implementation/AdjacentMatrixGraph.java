@@ -48,7 +48,20 @@ public class AdjacentMatrixGraph implements Graph {
         Collections.sort(adjacentVertexes);
         return adjacentVertexes;
     }
+
+    @Override
+    public void removeEdge(int vertex1, int vertex2) {
+        if (vertex1 < 0 || vertex2 < 0 || vertex1 >= numVertexes || vertex2 >= numVertexes) {
+            throw new IllegalArgumentException("Invalid vertex!");
+        }
+
+        adjacentMatrix[vertex1][vertex2] = 0;
+        if (graphType == GraphType.UNDIRECTED) {
+            adjacentMatrix[vertex2][vertex1] = 0;
+        }
+    }
 }
+
 
 
 

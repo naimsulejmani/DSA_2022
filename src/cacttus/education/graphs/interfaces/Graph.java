@@ -8,7 +8,11 @@ public interface Graph {
         UNDIRECTED
     }
 
+
+
     void addEdge(int vertex1, int vertex2);
 
     List<Integer> getAdjacentVertices(int vertex);
+
+    void removeEdge(int vertex1, int vertex2);
 }
