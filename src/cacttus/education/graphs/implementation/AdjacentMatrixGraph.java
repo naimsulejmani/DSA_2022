@@ -60,6 +60,8 @@ public class AdjacentMatrixGraph implements Graph {
             adjacentMatrix[vertex2][vertex1] = 0;
         }
     }
+
+
 }
 
 
